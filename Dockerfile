@@ -2,7 +2,7 @@ FROM centos
 RUN mkdir /opt/tomcat/
 
 WORKDIR /opt/tomcat
-RUN wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.32/bin/apache-tomcat-8.0.32.tar.gz
+RUN curl -O https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.32/bin/apache-tomcat-8.0.32.tar.gz
 RUN tar -xvfz apache-tomcat*.tar.gz
 
 RUN mv apache-tomcat-8.5.40/* /opt/tomcat/.
