@@ -2,8 +2,9 @@ FROM centos
 RUN mkdir /opt/tomcat/
 
 WORKDIR /opt/tomcat
-RUN wget http://apache.mirrors.ionfish.org/tomcat/tomcat-8/v8.5.5/bin/apache-tomcat-8.5.5.tar.gz
-RUN tar xzvf apache-tomcat-8*tar.gz
+RUN curl -O https://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.40/bin/apache-tomcat-8.5.40.tar.gz
+RUN tar xvfz apache-tomcat*.tar.gz
+
 RUN mv apache-tomcat-8.5.40/* /opt/tomcat/.
 RUN yum -y install java
 RUN java -version
